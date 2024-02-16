@@ -1,4 +1,4 @@
-name: Deploy frontend application
+name: Deploy frontend application for pord
  
 'on':
  
@@ -114,6 +114,6 @@ jobs:
  
             docker compose pull
  
-            docker-cpmpose -f docker-compose-prod.yml up -d
+            docker cpmpose -f docker-compose-prod.yml up -d
  
             rm -rf /home/ubuntu/frontend
