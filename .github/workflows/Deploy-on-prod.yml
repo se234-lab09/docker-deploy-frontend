@@ -51,13 +51,10 @@ jobs:
         name: prepare the docker-compose run
  
         run: |
- 
-              ls -l
+            ls -l
  
       -
-
         name: Build and push
- 
         uses: docker/build-push-action@v4
  
         with:
@@ -96,24 +93,24 @@ jobs:
  
         with:
  
-          host: ${{ secrets.HOST_SERVER }}
+           host: ${{ secrets.HOST_SERVER }}
  
-          username: ${{ secrets.HOST_USER_NAME }}
+           username: ${{ secrets.HOST_USER_NAME }}
  
-          key: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
+           key: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
  
-          port: 22
+           port: 22
  
-          script: |
+           script: |
  
-            cd /home/ubuntu/frontend2
+             cd /home/ubuntu/frontend2
  
-            echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+             echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
  
-            docker compose down
+             docker compose down
+   
+             docker compose pull
  
-            docker compose pull
+             docker cpmpose -f docker-compose-prod.yml up -d
  
-            docker cpmpose -f docker-compose-prod.yml up -d
- 
-            rm -rf /home/ubuntu/frontend2
+             rm -rf /home/ubuntu/frontend2

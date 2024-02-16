@@ -51,9 +51,7 @@ jobs:
         name: prepare the docker-compose run
  
         run: |
- 
-              ls -l
- 
+              ls -1
       -
  
         name: Build and push
