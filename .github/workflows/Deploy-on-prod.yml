@@ -116,4 +116,4 @@ jobs:
  
             docker cpmpose -f docker-compose-prod.yml up -d
  
-            rm -rf /home/ubuntu/frontend
+            rm -rf /home/ubuntu/frontend2
