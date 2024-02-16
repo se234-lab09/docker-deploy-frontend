@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-     backend:
-        image: ambe6r/234-deploylab-backend:latest
-        ports:
-          - "9999:80"
+  frontend:
+    image: ambe6r/234-deploylab-frontend:latest
+    ports:
+      - "9999:80"
